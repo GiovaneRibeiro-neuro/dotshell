@@ -220,6 +220,7 @@ aws-login() {
 # General exports
 export NODE_ENV="development"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export EDITOR=vim
 export TMPDIR=/tmp
 
