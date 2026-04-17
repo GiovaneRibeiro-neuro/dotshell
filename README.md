@@ -5,6 +5,7 @@ The dotfiles for my shell configurations files (bashrc, zshrc, etc), which I use
 ## Pre-requisites
 
 * nerd-fonts (More specifically, ttf-font-awesome; ttf-jetbrains-mono-nerd; ttf-nerd-fonts-symbols)
+* cURL
 
 ## How to use it?
 
