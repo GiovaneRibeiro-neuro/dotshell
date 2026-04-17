@@ -38,5 +38,11 @@ ln -s "$SCRIPT_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 # Store this directory inside the rc file
 echo "$SCRIPT_DIR" > $HOME/.dotshellrc
 
+# install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Install starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
