@@ -26,7 +26,7 @@ test alias keygen >/dev/null 2>&1 || alias keygen='ssh-keygen -b 7168 -t rsa'
 test alias nerdfont >/dev/null 2>&1 || alias nerdfont='bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"'
 
 # hledger
-if command -v <app_name> >/dev/null 2>&1; then
+if command -v hledger >/dev/null 2>&1; then
     ARDA=$HOME/workspace/arda
     LAURELIN=$ARDA/laurelin
     JOURNAL_LOC=$LAURELIN/raw
