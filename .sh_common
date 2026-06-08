@@ -208,6 +208,29 @@ gpg-dec() {
   gpg -d -o "$output_file" "$input_file" && echo "✔ Desencriptado com sucesso: $output_file"
 }
 
+lsgpg(){ 
+    gpg --list-keys --keyid-format SHORT 
+}
+
+open-vault() {
+    if [ "$#" -eq 0 ]; then
+        ENC_PARTITION="/dev/sda5"
+    else
+        ENC_PARTITION=$1
+    fi
+
+    sudo cryptsetup luksOpen $ENC_PARTITION encrypted-usb
+    sudo mkdir -p /mnt/usb 2>&1
+    sudo mount /dev/mapper/encrypted-usb /mnt/usb
+
+    echo "$ENC_PARTITION mounted successfully in /mnt/usb"
+}
+
+close-vault(){
+    sudo umount /mnt/usb
+    sudo cryptsetup luksClose encrypted-usb
+}
+
 # AWS login for CLI use
 aws-login() {
 
