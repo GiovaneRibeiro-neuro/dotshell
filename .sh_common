@@ -91,6 +91,8 @@ test alias claude-review >/dev/null 2>&1 || alias claude-review='claude --system
 # Research/exploration mode
 test alias claude-research >/dev/null 2>&1 || alias claude-research='claude --system-prompt "$(cat ~/.claude/contexts/research.md)"'
 
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
 test alias t >/dev/null 2>&1 || alias t='todo.sh'
 
 ##
