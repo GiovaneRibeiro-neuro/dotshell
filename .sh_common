@@ -24,11 +24,12 @@ test alias net > /dev/null 2>&1 || alias net='netstat -tlnp'
 test alias untar > /dev/null 2>&1 || alias untar='tar -zxvf'
 test alias keygen >/dev/null 2>&1 || alias keygen='ssh-keygen -b 7168 -t rsa'
 test alias nerdfont >/dev/null 2>&1 || alias nerdfont='bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"'
+test alias emacs >/dev/null 2>&1 || alias emacs='emacs -nw'
 
 # hledger
 if command -v hledger >/dev/null 2>&1; then
     ARDA=$HOME/arda
-    JOURNAL_LOC=$ARDA/raw/transactions
+    JOURNAL_LOC=$ARDA/0-index/transactions
     JOURNAL_FILE=$JOURNAL_LOC/$(date +'%Y').journal
     if [ ! -d $ARDA ]; then
         git clone git@github.com:giovanebribeiro/arda.git $ARDA
@@ -48,7 +49,7 @@ if command -v hledger >/dev/null 2>&1; then
     if [ ! -f "$ARDA/.venv/bin/python" ]; then
         uv venv "$ARDA/.venv" --quiet && uv pip install -r "$ARDA/scripts/requirements.txt" --python "$ARDA/.venv" --quiet
     fi
-    test alias h >/dev/null 2>&1 || alias h="$ARDA/.venv/bin/python $ARDA/scripts/hl.py"
+    test alias h >/dev/null 2>&1 || alias h="$ARDA/.venv/bin/python $ARDA/utils/scripts/hl.py"
 else
     echo "!!! WARN: hledger is not installed !!!"
 fi
