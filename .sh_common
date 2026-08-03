@@ -25,6 +25,7 @@ test alias untar > /dev/null 2>&1 || alias untar='tar -zxvf'
 test alias keygen >/dev/null 2>&1 || alias keygen='ssh-keygen -b 7168 -t rsa'
 test alias nerdfont >/dev/null 2>&1 || alias nerdfont='bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"'
 test alias emacs >/dev/null 2>&1 || alias emacs='emacs -nw'
+test alias today >/dev/null 2>&1 || alias today='emacs ~/arda/0-index/notes/today.org'
 
 # hledger
 if command -v hledger >/dev/null 2>&1; then
