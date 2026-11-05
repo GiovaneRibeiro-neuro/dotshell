@@ -50,5 +50,8 @@ curl -s "https://get.sdkman.io" | bash
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Install opencode
+curl -fsSL https://opencode.ai/v2/install | bash
+
 # Install starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y

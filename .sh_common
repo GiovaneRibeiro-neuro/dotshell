@@ -422,6 +422,7 @@ export PATH="$HOME/go/bin:$PATH"
 export EDITOR=vim
 export TMPDIR=/tmp
 export CARGO_NET_GIT_FETCH_WITH_CLI=true
+export PATH=/home/gbr/.opencode/bin:$PATH
 
 #
 # OTHER STUFF
